@@ -12,6 +12,13 @@ INSTALLATIONS:
 - ( optional ) npm install react-scripts@latest
 - npm install --save-dev axios
 - npm install --save-dev react-router-dom
+- in folder src create file routes.js =>
+<!-- export default {
+  home: '/',
+  authors: '/authors',
+  books: '/books',
+  bookDetails: '/books/:bookId',
+}; -->
 - npm install --save-dev prop-types
 - npm install --save-dev prettier
 - npm install --save-dev husky@4.3.7
