@@ -38,11 +38,13 @@
     ]
   },
   "devDependencies": {
+    "axios": "^0.21.1",
     "husky": "^4.3.7",
     "lint-staged": "^9.4.2",
     "modern-normalize": "^1.0.0",
     "prettier": "^2.2.1",
     "prop-types": "^15.7.2",
+    "react-loader-spinner": "^4.0.0",
     "react-router-dom": "^5.2.0"
   }
 }

@@ -1,0 +1,17 @@
+.title {
+  text-align: center;
+}
+
+.filmMenu {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.filmMenuList {
+  list-style: none;
+  margin-bottom: 10px;
+  width: 20%;
+  height: 300px;
+}

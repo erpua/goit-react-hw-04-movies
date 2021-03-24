@@ -1,0 +1,33 @@
+.siteNavigation {
+  padding: 10px;
+  background: lightgrey;
+}
+
+.menu {
+  display: flex;
+  justify-content: left;
+}
+
+.menuList {
+  margin-right: 50px;
+  text-transform: uppercase;
+  list-style: none;
+}
+
+.link {
+  padding: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  color: grey;
+}
+
+.link:hover,
+.link:focus {
+  color: #fff;
+  background-color: rgb(190, 184, 184);
+  border-radius: 10px;
+}
+
+.activeLink {
+  color: #fff;
+}

@@ -12,13 +12,17 @@ INSTALLATIONS:
 - ( optional ) npm install react-scripts@latest
 - npm install --save-dev axios
 - npm install --save-dev react-router-dom
+- npm install --save-dev react-loader-spinner
 - in folder src create file routes.js =>
-<!-- export default {
-  home: '/',
-  authors: '/authors',
-  books: '/books',
-  bookDetails: '/books/:bookId',
-}; -->
+<!--
+export default {
+  HOME_PAGE: '/',
+  MOVIES_PAGE: '/movies',
+  MOVIE_DETAILS_PAGE: '/movies/:movieId',
+  CASTS: '/movies/:movieId/cast',
+  REVIEWS: '/movies/:movieId/reviews',
+};
+-->
 - npm install --save-dev prop-types
 - npm install --save-dev prettier
 - npm install --save-dev husky@4.3.7
@@ -59,7 +63,28 @@ START NPM ( for development ):
 
 ---
 
-DEPLOY
+DEPLOY AT NETLIFY
+
+- npm install netlify-cli -g
+- in porject route create file ntelify.toml =>
+<!-- 
+[build]
+publish= "build" >>> for production build
+
+[[redirects]] from="/\*" to="/index.html" status = 200 >>> for single web app
+hosting -->
+
+- netlify login => will open browser with authorization link ( in terminal must
+  be => You are now logged into your Netlify account!)
+- in package.json => in scripts => predeploy": "npm run build", "deploy":
+  "netlify deploy -p" ( value homepage if it is, should be deleted )
+- npm run deploy => Create & configure a new site => myname's team ENTER => Site
+  name => uniq => ENTER => in Website URL / Live URL => our link
+- netlify open --site
+- delete folder .netlify
+- git add . / commit / push
+
+DEPLOY AT GITHUB
 
 - npm install --save-dev gh-pages
 - in package.json => - scripts => "homepage":
@@ -77,7 +102,30 @@ DEPLOY
 
 EXTRAS:
 
+- Component Suspense together with lazy wrap code to download what it needs by
+  that time
 - In PureComponent => method shouldComponentUpdate is automatic underground
+- NavLink has more styles then Link
+- export default withRouter(Component) => it wrappes our component in the other
+  component and passes props: history, location, match
+- emoji: <span role="img" aria-label="face emoji"> 🤓 </span>
+- Optional chaining (?.) =>
+<!-- {
+   const adventurer = { 
+  name: 'Alice', 
+  cat: { name:
+  'Dinah', }, 
+  }; console.log('object adventurer=> ', adventurer);
+
+const dogName = adventurer.dog?.name; console.log('const dogName =
+adventurer.dog?.name =>', dogName); // expected output: undefined
+
+console.log( 'adventurer.dog?.name || does not exist =>', adventurer.dog?.name
+|| 'this value " name " of property dog - does not exist', ); // expected
+output: undefined
+
+console.log( 'adventurer.someNonExistentMethod?.() =>',
+adventurer.someNonExistentMethod?.(), ); // expected output: undefined } -->
 
 Back-end:
 
